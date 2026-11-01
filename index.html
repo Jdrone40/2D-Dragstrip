@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101216">
+<title>Quarter Mile: Pixel Drag Racer</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="app">
+<div id="bar"><span>Cash <b id="cash"></b></span><span>Tier <b id="tier"></b></span><span class="wins">Wins <b id="wins"></b></span><span class="barbtns"><button class="alt sm" id="fsbtn" hidden>Full</button><button class="alt sm" id="pausebtn">Pause</button><button class="alt sm" id="optbtn">Options</button></span></div>
+<div id="stage">
+<div id="view"><canvas id="c" width="1440" height="630"></canvas></div>
+<div id="ctl"><div class="cl"><button id="nos">NITRO</button><button id="shift">SHIFT</button></div><button id="gas">HOLD GAS</button></div>
+</div>
+<div class="hint"><span class="kb">Hold gas to rev before the green, keep it held to launch, shift in the green zone. P pauses. Progress saves automatically.</span><span class="rot">Tip: turn your phone sideways for a bigger screen.</span></div>
+
+<div class="ov on" id="garage">
+<div class="ghead"><h1>Garage</h1><div class="cashbadge">$<span id="gcash"></span></div></div>
+<div class="gmain" id="gmain">
+<div class="gleft card"><canvas id="prev" width="510" height="240"></canvas><h3 id="cname"></h3><div class="rating"><small>BUILD RATING</small><b id="grate">0</b></div><div id="gstats"></div><div class="mercy" id="gmercy"></div></div>
+<div class="gright"><div class="tabs" id="tabs"></div><div id="tabbody"></div></div>
+</div>
+<div class="gfoot"><button class="go" id="race">Race setup</button><button class="go alt" id="storebtn">Parts store</button></div>
+</div>
+
+<div class="ov" id="store">
+<div class="ghead"><h1>Parts store</h1><div class="cashbadge">$<span id="scash"></span></div></div>
+<p class="sub" id="smsg"></p>
+<div class="tabs" id="stabs"></div>
+<div id="sbody"></div>
+<div class="btnrow"><button class="alt go" id="sback">Back to garage</button></div>
+</div>
+
+<div class="ov" id="setup">
+<h1>Race setup</h1><p class="sub" id="sumline"></p><div id="opts"></div>
+<div class="btnrow"><button class="alt go" id="back">Back</button><button class="go" id="start">Start race</button></div>
+</div>
+
+<div class="ov" id="result">
+<h1 id="rt"></h1><p class="sub" id="rs"></p>
+<div class="card" id="rd"></div>
+<div class="btnrow"><button class="alt go" id="again">Garage</button><button class="go" id="rerace">Race again</button></div>
+</div>
+
+<div class="ov" id="settings">
+<h1>Options</h1><p class="sub">Your progress saves automatically in this browser.</p>
+<div class="lbl">Transmission</div><div class="opts" id="o_trans"></div>
+<div class="lbl">Touch controls</div><div class="opts" id="o_hand"></div><div class="opts" id="o_size" style="margin-top:6px"></div>
+<div class="lbl">Engine volume</div><input type="range" id="o_vol" class="vol" min="0" max="100" aria-label="Engine volume">
+<div class="lbl">Vibration on launch and shifts (phones)</div><div class="opts" id="o_vib"></div>
+<div class="lbl">Keyboard controls (click one to change it)</div><div id="o_keys"></div>
+<p class="note">Gamepad: RT or A is gas. X, B or RB shifts. Y or LB is nitrous. Start pauses.</p>
+<div class="lbl">Cheat code</div><div class="btnrow"><input id="codein" class="codein" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Enter a code" aria-label="Cheat code"><button class="alt" id="codego">Apply</button></div><p class="note" id="codemsg" aria-live="polite"></p>
+<div class="lbl">Save data</div><button class="alt" id="resetsave">Reset save</button>
+<div class="btnrow" style="margin-top:12px"><button class="go" id="closeopt">Done</button></div>
+</div>
+</div>
+<script src="game.js"></script></body></html>

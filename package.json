@@ -1,0 +1,7 @@
+{
+  "name": "pixel-drag-racer",
+  "version": "1.0.0",
+  "description": "A 2D pixel-art drag racing game for the browser.",
+  "scripts": { "test": "node tests/game.test.js", "start": "npx serve ." },
+  "license": "MIT"
+}
